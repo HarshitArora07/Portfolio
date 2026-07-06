@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Harshit Arora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing Roboto for the logo, Plus Jakarta Sans, Audiowide for the hero title, and using Neue Haas / Suisse via fallbacks -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&family=Fraunces:wght@700;800;900&family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=14.0">
+</head>
+<body>
+    <!-- Premium Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-panel panel-left"></div>
+        <div class="preloader-panel panel-right"></div>
+        <div class="preloader-text-wrapper">
+            <h1 class="preloader-text">HARSHIT ARORA</h1>
+            <h2 class="preloader-subtext">PORTFOLIO</h2>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            
+            // 1. Reveal Text (curtain mask opens from center)
+            setTimeout(() => {
+                preloader.classList.add('reveal-text');
+            }, 50);
+
+            // 2. Fade/Scale Out Text
+            setTimeout(() => {
+                preloader.classList.add('fade-out-text');
+            }, 1600); 
+
+            // 3. Split Background Curtains and start Hero
+            setTimeout(() => {
+                preloader.classList.add('split');
+            }, 1900); 
+
+            // Trigger hero entrance while curtains are opening
+            setTimeout(() => {
+                document.body.classList.add('intro-finished');
+            }, 2300); 
+
+            // 4. Remove from DOM completely
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+    <main>
+        <section class="hero" id="hero">
+            <!-- Top Header Navigation -->
+            <header class="header">
+                <div class="logo">Portfolio</div>
+                <div class="menu-wrapper">
+                    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="hero-menu">
+                        <span>Menu</span>
+                        <span class="menu-indicator"></span>
+                    </button>
+                    <div class="menu-panel" id="hero-menu" aria-hidden="true">
+                        <button type="button" class="menu-link" data-target="hero">Home</button>
+                        <button type="button" class="menu-link" data-target="projects">Projects</button>
+                        <button type="button" class="menu-link" data-target="about">About</button>
+                        <button type="button" class="menu-link" data-target="journey">Journey</button>
+                        <button type="button" class="menu-link" data-target="skills">Skills</button>
+                        <button type="button" class="menu-link" data-target="experience">Experience</button>
+                        <button type="button" class="menu-link" data-target="process">Process</button>
+                        <button type="button" class="menu-link" data-target="education">Education</button>
+                        <button type="button" class="menu-link" data-target="contact">Contact</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Glowing Background Layer -->
+            <div class="glow-sphere"></div>
+
+            <!-- Main Content Area -->
+            <div class="hero-container">
+                <!-- Center Typography -->
+                <div class="hero-main-content">
+                    <p class="hero-intro">Hey <span class="waving-hand">👋</span>, I'm a <span id="typewriter">Full Stack Developer</span><span class="cursor">|</span></p>
+                    <h1 class="hero-title">HARSHIT ARORA</h1>
+                </div>
+
+                <!-- Portrait Container -->
+                <div class="portrait-container">
+                    <img src="assets/images/portrait_optimized.webp" alt="Harshit Arora" class="portrait-img" loading="eager" decoding="async">
+                </div>
+
+                <!-- Vertical Scroll Indicator on Right-Middle -->
+                <div class="scroll-indicator">
+                    <span class="scroll-line"></span>
+                    <span class="scroll-text">SCROLL</span>
+                </div>
+
+                
+
+                <!-- Footer details of the hero section -->
+                <footer class="hero-footer">
+                    <!-- Left Section: Copyright and Contacts -->
+                    <div class="footer-left">
+                        <span class="copyright">©2026</span>
+                        <div class="contact-info">
+                            <a href="mailto:contact.harshitonmail@gmail.com">E contact.harshitonmail@gmail.com</a>
+                            <a href="tel:+919548484695">T +91 9548484695</a>
+                        </div>
+                    </div>
+
+                    <!-- Right Section: Brief Bio and Socials -->
+                    <div class="footer-right">
+                        <p class="bio-text">
+                            I build fast, scalable, and user-friendly web applications using modern JavaScript technologies. My main tools of choice are React on the frontend and Node.js on the backend.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/harshit-arora07" target="_blank" rel="noreferrer">/ LinkedIn</a>
+                            <a href="https://github.com/HarshitArora07" target="_blank" rel="noreferrer">/ GitHub</a>
+                            <a href="https://www.geeksforgeeks.org/profile/harshit07arora" target="_blank" rel="noreferrer">/ GFG</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Explore Work Projects Section -->
+        <section class="projects" id="projects">
+            <div class="projects-container">
+                <!-- Section Header -->
+                <header class="projects-header">
+                    <div class="projects-label">// Explore Work</div>
+                    <h2 class="projects-headline">A Showcase of My<br>Latest Projects</h2>
+                </header>
+
+                <!-- Custom Green Code-Bracket Divider -->
+                <div class="projects-divider">
+                    <span class="divider-bracket">&lt;/</span>
+                    <span class="divider-line"></span>
+                    <span class="divider-arrow">&gt;</span>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+                    <!-- Project 1: Bakemart Paradise -->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="assets/images/p1.png" alt="Bakemart Paradise" class="project-img">
+                        </div>
+                        <h3 class="project-title">Bakemart Paradise</h3>
+                        <p class="project-desc">
+                            Bakemart Paradise is a premium bakery and pastry shop template designed to showcase handmade cakes, pastries, and desserts, offering a clean, mouthwatering interface.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5 & CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://bakemart-paradise.vercel.app/" target="_blank" class="project-btn btn-live">Live Demo</a>
+                            <a href="https://github.com/HarshitArora07/bakemart-paradise.git" target="_blank" class="project-btn btn-github">GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: DocLens -->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="assets/images/p2.png" alt="DocLens" class="project-img">
+                        </div>
+                        <h3 class="project-title">DocLens</h3>
+                        <p class="project-desc">
+                            DocLens is a document intelligence platform that leverages AI to extract text, summarize core insights, and analyze structured data from PDFs, Word files, and images.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">Tailwind CSS</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: ResumeAnalyzer -->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="assets/images/p3.png" alt="ResumeAnalyzer" class="project-img">
+                        </div>
+                        <h3 class="project-title">ResumeAnalyzer</h3>
+                        <p class="project-desc">
+                            ResumeAnalyzer is an AI-powered SaaS application that scans, scores, and optimizes resumes against job descriptions to significantly improve ATS pass rates.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">OpenAI API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://resume-analyzer-gamma-gilt.vercel.app/" target="_blank" class="project-btn btn-live">Live Demo</a>
+                            <a href="https://github.com/HarshitArora07/ResumeAnalyzer.git" target="_blank" class="project-btn btn-github">GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: StudyStack -->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="assets/images/p4.png" alt="StudyStack" class="project-img">
+                        </div>
+                        <h3 class="project-title">StudyStack</h3>
+                        <p class="project-desc">
+                            StudyStack is an interactive learning platform that automatically transforms static study notes into personalized quizzes, summaries, and dynamic learning materials.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Vite</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Express</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://study-stack-one.vercel.app/" target="_blank" class="project-btn btn-live">Live Demo</a>
+                            <a href="https://github.com/HarshitArora07/Study-Stack.git" target="_blank" class="project-btn btn-github">GitHub</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <!-- Section Header -->
+                <header class="about-header">
+                    <div class="about-label">// About Me</div>
+                    <h2 class="about-headline">A Little Bit<br>About Myself</h2>
+                </header>
+
+                <!-- Custom Green Code-Bracket Divider -->
+                <div class="about-divider">
+                    <span class="divider-bracket">&lt;/</span>
+                    <span class="divider-line"></span>
+                    <span class="divider-arrow">&gt;</span>
+                </div>
+
+                <!-- Content Area -->
+                <div class="about-content">
+                    <!-- SVG Connector Lines -->
+                    <svg class="about-connector-svg" width="100%" height="100%">
+                        <path class="connector-line line-1" fill="none" stroke="#91f17e" stroke-width="2" />
+                        <path class="connector-line line-2" fill="none" stroke="#67e8f9" stroke-width="2" />
+                        <path class="connector-line line-3" fill="none" stroke="#c084fc" stroke-width="2" />
+                    </svg>
+
+                    <!-- Left: Portrait Image Wrapper -->
+                    <div class="about-img-wrapper">
+                        <img src="assets/images/IMG20260611182628-Photoroom.png" alt="Harshit Arora" class="about-img">
+                    </div>
+
+                    <!-- Right: Info Text Content -->
+                    <div class="about-text-content">
+                        <div class="about-info-block">
+                            <h3 class="about-info-title">What I Do</h3>
+                            <p class="about-info-desc">
+                                I build scalable and high-performance web applications focused on solving real-world problems.
+                            </p>
+                        </div>
+                        
+                        <div class="about-info-block">
+                            <h3 class="about-info-title">How I Do It</h3>
+                            <p class="about-info-desc">
+                                I use modern technologies like React, Node.js, and Spring Boot, with a strong focus on clean architecture, performance, and user experience.
+                            </p>
+                        </div>
+
+                        <div class="about-info-block">
+                            <h3 class="about-info-title">Impact I Create</h3>
+                            <p class="about-info-desc">
+                                I deliver efficient, user-friendly digital solutions that transform complex data into meaningful insights and drive real value.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="journey" id="journey">
+            <div class="journey-container">
+                <!-- Section Header -->
+                <header class="journey-header">
+                    <div class="journey-label">// Timeline</div>
+                    <h2 class="journey-headline">My Throughout<br>Journey</h2>
+                </header>
+
+                <!-- Custom Green Code-Bracket Divider -->
+                <div class="journey-divider">
+                    <span class="divider-bracket">&lt;/</span>
+                    <span class="divider-line"></span>
+                    <span class="divider-arrow">&gt;</span>
+                </div>
+
+                <!-- Content Area -->
+                <div class="journey-content">
+                    <div class="timeline-container-inner">
+                        <!-- Vertical Track Lines -->
+                        <div class="timeline-line"></div>
+                        <div class="timeline-line-progress"></div>
+
+                        <!-- Timeline Item 1 -->
+                        <div class="timeline-item left">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-card">
+                                <span class="timeline-date">September 2022</span>
+                                <h3 class="timeline-title">Started Coding</h3>
+                                <p class="timeline-desc">
+                                    Took my first steps into programming, exploring algorithms, structures, and building a foundation in software development.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="timeline-item right">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-card">
+                                <span class="timeline-date">June 2023</span>
+                                <h3 class="timeline-title">Entered Web Dev</h3>
+                                <p class="timeline-desc">
+                                    Discovered web technologies and began building user interfaces using HTML, CSS, and basic JavaScript.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="timeline-item left">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-card">
+                                <span class="timeline-date">January 2024</span>
+                                <h3 class="timeline-title">Learned React</h3>
+                                <p class="timeline-desc">
+                                    Dived deep into modern frontend engineering, building dynamic and component-driven single-page applications.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="timeline-item right">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-card">
+                                <span class="timeline-date">October 2024</span>
+                                <h3 class="timeline-title">Become Full Stack Developer</h3>
+                                <p class="timeline-desc">
+                                    Expanded my skillset into backend systems, databases, APIs, and managing end-to-end web applications.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 5 -->
+                        <div class="timeline-item left">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-card">
+                                <span class="timeline-date">February 2025</span>
+                                <h3 class="timeline-title">Started Building Projects</h3>
+                                <p class="timeline-desc">
+                                    Launched full-scale applications, integrating databases, cloud architectures, and deploying production-ready platforms.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 6 -->
+                        <div class="timeline-item right">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-card">
+                                <span class="timeline-date">November 2025</span>
+                                <h3 class="timeline-title">AI Integration</h3>
+                                <p class="timeline-desc">
+                                    Integrated artificial intelligence models, LLMs, and semantic search features into web projects to build smart applications.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 7 -->
+                        <div class="timeline-item left">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-card">
+                                <span class="timeline-date">Present</span>
+                                <h3 class="timeline-title">Looking for Opportunity</h3>
+                                <p class="timeline-desc">
+                                    Ready to join a fast-paced product engineering team, bringing robust full-stack experience and drive to deliver value.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="skills-container">
+                <!-- Section Header -->
+                <header class="skills-header">
+                    <div class="skills-label">// Skills</div>
+                    <h2 class="skills-headline">Tech Stack</h2>
+                </header>
+
+                <!-- Custom Green Code-Bracket Divider -->
+                <div class="skills-divider">
+                    <span class="divider-bracket">&lt;/</span>
+                    <span class="divider-line"></span>
+                    <span class="divider-arrow">&gt;</span>
+                </div>
+                <div class="mobile-tap-hint-global">Tap on the grid to know more</div>
+
+                <!-- Content Area -->
+                <div class="skills-content">
+                    <div class="bento-grid">
+                        <!-- Bento Box 1: Frontend (spans 2 cols, 2 rows) -->
+                        <div class="bento-card col-span-2 row-span-2 theme-lime step-right">
+                            <div class="bento-glow-wrapper"></div>
+                            <div class="bento-connector">
+                                <div class="connector-seg-1"></div>
+                                <div class="connector-seg-2"></div>
+                                <div class="connector-seg-3"></div>
+                            </div>
+                            <div class="bento-popup">
+                                <h4 class="details-title">Frontend Stack</h4>
+                                <p class="details-subtitle">Interactive UI & State Management</p>
+                                <div class="details-divider"></div>
+                                <ul class="details-list">
+                                    <li><strong>React.js</strong> — Configured SPA state and dynamic API hooks in <em>ResumeAnalyzer</em> & <em>StudyStack</em>.</li>
+                                    <li><strong>JavaScript (ES6)</strong> — Handled core DOM events and timeline tracking in <em>Bakemart Paradise</em>.</li>
+                                    <li><strong>HTML5 & CSS3</strong> — Implemented fluid grids, flexbox layouts, and theme custom properties.</li>
+                                </ul>
+                            </div>
+                            <div class="bento-card-header">
+                                <h3 class="bento-card-title">Frontend</h3>
+                            </div>
+                            <div class="bento-tags">
+                                <span class="bento-tag">React.js</span>
+                                <span class="bento-tag">HTML</span>
+                                <span class="bento-tag">CSS</span>
+                                <span class="bento-tag">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento Box 2: Backend (spans 2 cols, 1 row) -->
+                        <div class="bento-card col-span-2 row-span-1 theme-mint step-left">
+                            <div class="bento-glow-wrapper"></div>
+                            <div class="bento-connector">
+                                <div class="connector-seg-1"></div>
+                                <div class="connector-seg-2"></div>
+                                <div class="connector-seg-3"></div>
+                            </div>
+                            <div class="bento-popup">
+                                <h4 class="details-title">Backend Architecture</h4>
+                                <p class="details-subtitle">Robust APIs & Databases</p>
+                                <div class="details-divider"></div>
+                                <ul class="details-list">
+                                    <li><strong>Node & Express</strong> — Designed RESTful endpoint controllers and JWT user authorization in <em>ResumeAnalyzer</em> & <em>StudyStack</em>.</li>
+                                    <li><strong>MongoDB</strong> — Created scalable Mongoose schemas and query logic for <em>StudyStack</em>.</li>
+                                    <li><strong>RESTful APIs</strong> — Structured endpoint routes with JSON schemas and CORS policies.</li>
+                                </ul>
+                            </div>
+                            <div class="bento-card-header">
+                                <h3 class="bento-card-title">Backend</h3>
+                            </div>
+                            <div class="bento-tags">
+                                <span class="bento-tag">Node.js</span>
+                                <span class="bento-tag">Express.js</span>
+                                <span class="bento-tag">MongoDB</span>
+                                <span class="bento-tag">SQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento Box 3: Languages (spans 1 col, 1 row) -->
+                        <div class="bento-card col-span-1 row-span-1 theme-sage step-right">
+                            <div class="bento-glow-wrapper"></div>
+                            <div class="bento-connector">
+                                <div class="connector-seg-1"></div>
+                                <div class="connector-seg-2"></div>
+                                <div class="connector-seg-3"></div>
+                            </div>
+                            <div class="bento-popup">
+                                <h4 class="details-title">Languages & Core</h4>
+                                <p class="details-subtitle">Problem Solving Foundations</p>
+                                <div class="details-divider"></div>
+                                <ul class="details-list">
+                                    <li><strong>Java & C</strong> — Used for building algorithms, runtime optimization, and object-oriented architectures.</li>
+                                    <li><strong>Python</strong> — Built background scripts for PDF parsing and intelligence data processing.</li>
+                                    <li><strong>SQL</strong> — Wrote relational database schemas, complex join queries, and transaction rules.</li>
+                                </ul>
+                            </div>
+                            <div class="bento-card-header">
+                                <h3 class="bento-card-title">Languages</h3>
+                            </div>
+                            <div class="bento-tags">
+                                <span class="bento-tag">Java</span>
+                                <span class="bento-tag">Python</span>
+                                <span class="bento-tag">C</span>
+                                <span class="bento-tag">SQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento Box 4: Tools (spans 1 col, 1 row) -->
+                        <div class="bento-card col-span-1 row-span-1 theme-cyan step-left">
+                            <div class="bento-glow-wrapper"></div>
+                            <div class="bento-connector">
+                                <div class="connector-seg-1"></div>
+                                <div class="connector-seg-2"></div>
+                                <div class="connector-seg-3"></div>
+                            </div>
+                            <div class="bento-popup">
+                                <h4 class="details-title">Developer Tools</h4>
+                                <p class="details-subtitle">Workflows & Productivity</p>
+                                <div class="details-divider"></div>
+                                <ul class="details-list">
+                                    <li><strong>Git & GitHub</strong> — Managed project branch merges, conflict resolution, and release workflows.</li>
+                                    <li><strong>VS Code</strong> — Configured local workspace debug targets, linters, and live server builds.</li>
+                                </ul>
+                            </div>
+                            <div class="bento-card-header">
+                                <h3 class="bento-card-title">Tools</h3>
+                            </div>
+                            <div class="bento-tags">
+                                <span class="bento-tag">Git</span>
+                                <span class="bento-tag">GitHub</span>
+                                <span class="bento-tag">VS Code</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento Box 5: Deployment (spans 2 cols, 1 row) -->
+                        <div class="bento-card col-span-2 row-span-1 theme-emerald step-right">
+                            <div class="bento-glow-wrapper"></div>
+                            <div class="bento-connector">
+                                <div class="connector-seg-1"></div>
+                                <div class="connector-seg-2"></div>
+                                <div class="connector-seg-3"></div>
+                            </div>
+                            <div class="bento-popup">
+                                <h4 class="details-title">Deployment & Cloud</h4>
+                                <p class="details-subtitle">Hosting & Infrastructure</p>
+                                <div class="details-divider"></div>
+                                <ul class="details-list">
+                                    <li><strong>Vercel & Netlify</strong> — Connected CI/CD deploy hooks for instant frontend production builds.</li>
+                                    <li><strong>Render</strong> — Configured continuous integration triggers for Node.js API server containers.</li>
+                                </ul>
+                            </div>
+                            <div class="bento-card-header">
+                                <h3 class="bento-card-title">Deployment</h3>
+                            </div>
+                            <div class="bento-tags">
+                                <span class="bento-tag">Vercel</span>
+                                <span class="bento-tag">Netlify</span>
+                                <span class="bento-tag">Render</span>
+                                <span class="bento-tag">AWS</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento Box 6: Core (spans 2 cols, 1 row) -->
+                        <div class="bento-card col-span-2 row-span-1 theme-chartreuse step-left">
+                            <div class="bento-glow-wrapper"></div>
+                            <div class="bento-connector">
+                                <div class="connector-seg-1"></div>
+                                <div class="connector-seg-2"></div>
+                                <div class="connector-seg-3"></div>
+                            </div>
+                            <div class="bento-popup">
+                                <h4 class="details-title">Professional Core</h4>
+                                <p class="details-subtitle">Collaboration & Delivery</p>
+                                <div class="details-divider"></div>
+                                <ul class="details-list">
+                                    <li><strong>Problem Solving</strong> — Optimized data structures, reduced search complexities, and resolved bottlenecks.</li>
+                                    <li><strong>Team Work</strong> — Participated in peer code reviews, Git merge alignment, and UI design reviews.</li>
+                                </ul>
+                            </div>
+                            <div class="bento-card-header">
+                                <h3 class="bento-card-title">Core</h3>
+                            </div>
+                            <div class="bento-tags">
+                                <span class="bento-tag">Problem Solving</span>
+                                <span class="bento-tag">Team Collaboration</span>
+                                <span class="bento-tag">Time Management</span>
+                                <span class="bento-tag">Quick Learner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience" id="experience">
+            <div class="experience-container">
+                <!-- Section Header -->
+                <header class="experience-header">
+                    <div class="experience-label">// Experience</div>
+                    <h2 class="experience-headline">Work<br>Experience</h2>
+                </header>
+
+                <!-- Custom Green Code-Bracket Divider -->
+                <div class="experience-divider">
+                    <span class="divider-bracket">&lt;/</span>
+                    <span class="divider-line"></span>
+                    <span class="divider-arrow">&gt;</span>
+                </div>
+
+                <!-- Content Area -->
+                <div class="experience-content">
+                    <div class="exp-slider-wrapper" id="expSliderWrapper">
+
+                        <!-- Clipping container -->
+                        <div class="exp-overflow">
+                            <div class="exp-track" id="expTrack">
+
+                                <!-- Card 1: ResearchScrypt -->
+                                <article class="exp-card">
+                                    <div class="exp-card-inner">
+                                        <div class="exp-card-top">
+                                            <div class="exp-company-group">
+                                                <span class="exp-num">01</span>
+                                                <h3 class="exp-company">ResearchScrypt</h3>
+                                            </div>
+                                            <span class="exp-duration">May 2024 – August 2024</span>
+                                        </div>
+                                        <p class="exp-role">Web Development Intern</p>
+                                        <div class="exp-sep"></div>
+                                        <div class="exp-body">
+                                            <div class="exp-col">
+                                                <h4 class="exp-section-label">Responsibilities</h4>
+                                                <ul class="exp-list">
+                                                    <li>Built responsive, interactive user interfaces using React and Tailwind CSS while debugging complex API integrations.</li>
+                                                    <li>Integrated backend REST APIs connected with open-source AI models to handle live, real-time data streaming.</li>
+                                                    <li>Enhanced cross-device UI consistency and optimized load speeds, improving mobile usability.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="exp-col">
+                                                <h4 class="exp-section-label">Technologies</h4>
+                                                <div class="exp-tags">
+                                                    <span class="exp-tag">React</span>
+                                                    <span class="exp-tag">Tailwind CSS</span>
+                                                    <span class="exp-tag">REST APIs</span>
+                                                    <span class="exp-tag">AI Integration</span>
+                                                    <span class="exp-tag">Git</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Card 2: Creative Studios -->
+                                <article class="exp-card">
+                                    <div class="exp-card-inner">
+                                        <div class="exp-card-top">
+                                            <div class="exp-company-group">
+                                                <span class="exp-num">02</span>
+                                                <h3 class="exp-company">Creative Studios</h3>
+                                            </div>
+                                            <span class="exp-duration">Sep 2023 – Dec 2023</span>
+                                        </div>
+                                        <p class="exp-role">Front-End Intern</p>
+                                        <div class="exp-sep"></div>
+                                        <div class="exp-body">
+                                            <div class="exp-col">
+                                                <h4 class="exp-section-label">Responsibilities</h4>
+                                                <ul class="exp-list">
+                                                    <li>Developed modern single-page applications using React for modular and reusable front-end code.</li>
+                                                    <li>Built dynamic and accessible UIs using semantic HTML5, CSS3, and JavaScript.</li>
+                                                    <li>Collaborated in an Agile team environment, participating in sprint reviews and code audits.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="exp-col">
+                                                <h4 class="exp-section-label">Technologies</h4>
+                                                <div class="exp-tags">
+                                                    <span class="exp-tag">React</span>
+                                                    <span class="exp-tag">HTML5 / CSS3</span>
+                                                    <span class="exp-tag">JavaScript</span>
+                                                    <span class="exp-tag">Agile / Scrum</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                            </div><!-- /.exp-track -->
+                        </div><!-- /.exp-overflow -->
+
+                        <!-- Slider Controls -->
+                        <div class="exp-controls">
+                            <div class="exp-indicators" id="expIndicators">
+                                <button class="exp-dot active" data-index="0" aria-label="Experience 1"></button>
+                                <button class="exp-dot" data-index="1" aria-label="Experience 2"></button>
+                            </div>
+                            <div class="exp-nav-btns">
+                                <button class="exp-nav-btn" id="expPrev" aria-label="Previous experience" disabled>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                                </button>
+                                <button class="exp-nav-btn" id="expNext" aria-label="Next experience">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div><!-- /.exp-slider-wrapper -->
+                </div><!-- /.experience-content -->
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process" id="process">
+            <div class="process-container">
+                <!-- Section Header -->
+                <header class="process-header">
+                    <div class="process-label">// Process</div>
+                    <h2 class="process-headline">My Development <br>Work Process</h2>
+                </header>
+
+                <!-- Glowing Decorative Dot -->
+                <div class="process-dot-wrapper">
+                    <div class="process-dot"></div>
+                </div>
+
+                <!-- Custom Green Code-Bracket Divider -->
+                <div class="process-divider">
+                    <span class="divider-bracket">&lt;/</span>
+                    <span class="divider-line"></span>
+                    <span class="divider-arrow">&gt;</span>
+                </div>
+
+                <!-- Content Area -->
+                <div class="process-content">
+                    <div class="process-grid">
+                        <!-- Step 1 -->
+                        <div class="process-column">
+                            <div class="process-num"><span class="clipped-zero">0</span>1</div>
+                            <h3 class="process-title">Plan &amp; Architect</h3>
+                            <p class="process-desc">Before writing a single line of code, I dive deep into understanding the project goals, user needs, and technical constraints.</p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="process-column">
+                            <div class="process-num"><span class="clipped-zero">0</span>2</div>
+                            <h3 class="process-title">Build &amp; Develop</h3>
+                            <p class="process-desc">Build pixel-perfect user interfaces and robust backend systems in parallel. I ensure that every component—UI or API—is maintainable.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="process-column">
+                            <div class="process-num"><span class="clipped-zero">0</span>3</div>
+                            <h3 class="process-title">Launch &amp; Support</h3>
+                            <p class="process-desc">I also provide post-launch monitoring, performance optimization, and ongoing iteration support to keep your product growing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education" id="education">
+            <div class="education-container">
+                <!-- Section Header -->
+                <header class="education-header">
+                    <div class="education-label">// Education</div>
+                    <h2 class="education-headline">Degree Learning</h2>
+                </header>
+
+                <!-- Custom Green Code-Bracket Divider -->
+                <div class="education-divider">
+                    <span class="divider-bracket">&lt;/</span>
+                    <span class="divider-line"></span>
+                    <span class="divider-arrow">&gt;</span>
+                </div>
+
+                <!-- Content Area -->
+                <div class="education-content">
+                    <div class="edu-card">
+                        <div class="edu-meta">
+                            <span class="edu-year">2022 — 2026</span>
+                            <span class="edu-dot"></span>
+                            <span class="edu-university">Sharda University</span>
+                            <span class="edu-dot"></span>
+                            <span class="edu-university">CGPA: 8.7/10</span>
+                        </div>
+                        <h3 class="edu-degree">Bachelor of Technology — Computer Science</h3>
+                        <p class="edu-desc">Focused on full-stack development and AI-based systems, with hands-on experience building scalable web applications and intelligent data-driven solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact section -->
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <!-- Section Header -->
+                <header class="contact-header">
+                    <div class="contact-label">// Contact</div>
+                    <h2 class="contact-headline">Let&apos;s build something great</h2>
+                </header>
+
+                <!-- Custom Green Code-Bracket Divider -->
+                <div class="contact-divider">
+                    <span class="divider-bracket">&lt;/</span>
+                    <span class="divider-line"></span>
+                    <span class="divider-arrow">&gt;</span>
+                </div>
+
+                <!-- Content Area -->
+                <div class="contact-content">
+                    <div class="contact-card contact-card-info">
+                        <div class="contact-intro-pill">
+                            <span class="contact-status-dot"></span>
+                            <span>Open to work</span>
+                        </div>
+                        <h3>Let&apos;s connect</h3>
+                        <p>I enjoy creating polished web experiences, thoughtful interfaces, and practical digital products that feel both modern and useful.</p>
+
+                        <div class="contact-details">
+                            <span>Email me at:</span>
+                            <a href="mailto:contact.harshitonmail@gmail.com">contact.harshitonmail@gmail.com</a>
+                        </div>
+
+                        <div class="contact-social-links">
+                            <a href="https://www.linkedin.com/in/harshit-arora07" target="_blank" rel="noreferrer">LinkedIn</a>
+                            <a href="https://github.com/HarshitArora07" target="_blank" rel="noreferrer">GitHub</a>
+                            <a href="https://www.instagram.com/harshitt__arora?igsh=N3p3N3hvMzZwa3lj" target="_blank" rel="noreferrer">Instagram</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card contact-card-form">
+                        <form class="contact-form">
+                            <div class="contact-form-row">
+                                <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required />
+                                <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" required />
+                            </div>
+                            <input type="text" name="subject" placeholder="Subject" aria-label="Subject" required />
+                            <textarea rows="6" name="message" placeholder="Tell me about your project..." aria-label="Project details" required></textarea>
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="js/app.js?v=6.0"></script>
+</body>
+</html>
