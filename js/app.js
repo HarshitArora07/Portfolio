@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let charIndex = 0;
     let isDeleting = false;
     let typingSpeed = 100;
+    let introFinished = false;
+
+    const heroIntroEnd = () => {
+        if (!introFinished) {
+            document.body.classList.add('intro-finished');
+            introFinished = true;
+        }
+    };
 
     function type() {
         const currentRole = roles[roleIndex];
@@ -23,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Handle word transitions
         if (!isDeleting && charIndex === currentRole.length) {
+            if (!introFinished) {
+                heroIntroEnd();
+            }
             // Wait at the end of the word before deleting
             typingSpeed = 2000;
             isDeleting = true;
@@ -107,19 +118,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Intersection Observer for divider line animations
     const dividers = document.querySelectorAll('.projects-divider, .about-divider, .journey-divider, .skills-divider, .experience-divider, .process-divider, .education-divider, .contact-divider');
-    dividers.forEach(divider => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.15
+    const dividerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                dividerObserver.unobserve(entry.target);
+            }
         });
-        observer.observe(divider);
+    }, {
+        threshold: 0.15
     });
+    dividers.forEach(divider => dividerObserver.observe(divider));
 
     // Intersection Observer for Timeline Items and Progress Line
     const timelineItems = document.querySelectorAll('.timeline-item');
