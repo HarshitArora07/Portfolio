@@ -72,6 +72,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Mobile: move `.footer-left` above portrait so flow becomes: footer-left -> portrait -> footer-right
+    (function handleFooterLeftMobile() {
+        const heroContainer = document.querySelector('.hero-container');
+        const portrait = document.querySelector('.portrait-container');
+        const footer = document.querySelector('.hero-footer');
+        if (!heroContainer || !portrait || !footer) return;
+        const footerLeft = footer.querySelector('.footer-left');
+        const footerRight = footer.querySelector('.footer-right');
+        if (!footerLeft || !footerRight) return;
+
+        let moved = false;
+
+        function place() {
+            const mobile = window.innerWidth <= 900;
+            if (mobile && !moved) {
+                // move footerLeft before portrait
+                heroContainer.insertBefore(footerLeft, portrait);
+                footerLeft.classList.add('moved-to-hero');
+                moved = true;
+            } else if (!mobile && moved) {
+                // move it back into footer before footer-right
+                footer.insertBefore(footerLeft, footerRight);
+                footerLeft.classList.remove('moved-to-hero');
+                moved = false;
+            }
+        }
+
+        // run on load and resize
+        window.addEventListener('resize', place);
+        window.addEventListener('orientationchange', place);
+        setTimeout(place, 120);
+    })();
+
     // Intersection Observer for divider line animations
     const dividers = document.querySelectorAll('.projects-divider, .about-divider, .journey-divider, .skills-divider, .experience-divider, .process-divider, .education-divider, .contact-divider');
     dividers.forEach(divider => {
